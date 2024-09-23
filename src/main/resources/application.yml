@@ -1,3 +1,6 @@
 spring:
   application:
     name: taibiex-task-service
+
+  profiles:
+    active: dev
