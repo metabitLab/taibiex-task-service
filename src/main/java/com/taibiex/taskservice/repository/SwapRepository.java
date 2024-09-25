@@ -11,4 +11,6 @@ public interface SwapRepository extends JpaRepository<Swap, Long> {
 
     long countAllBySender(String sender);
 
+    long countAllByRecipient(String recipient);
+
 }

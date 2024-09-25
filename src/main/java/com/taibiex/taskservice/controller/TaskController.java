@@ -25,9 +25,10 @@ public class TaskController {
 
     @PostMapping("checkSwapTask")
     public ResponseResult swapTask(@RequestBody @Validated SwapTaskRequestDTO request) {
-        long swap = swapService.countBySender(request.getUserAddress());
 
-        long mint = mintService.countBySender(request.getUserAddress());
+        long swap = swapService.countAllByRecipient(request.getUserAddress().toLowerCase());
+
+        long mint = mintService.countBySender(request.getUserAddress().toLowerCase());
 
         return ResponseResult.success(swap >= 3 || mint >= 1);
     }

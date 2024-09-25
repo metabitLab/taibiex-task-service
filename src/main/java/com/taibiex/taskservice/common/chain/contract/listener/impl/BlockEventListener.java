@@ -149,7 +149,7 @@ public class BlockEventListener {
     }
 
 
-    public void blocksEventScanner(Integer delayBlocks) throws InterruptedException {
+    public void blocksEventScanner(Integer delayBlocks) throws InterruptedException, NoSuchMethodException {
 
         ContractOffset contractOffset = contractOffsetService.findByContractAddress("Delay" + delayBlocks + "_" + BLOCK_CONTRACT_FLAG);
         BigInteger start;
@@ -193,6 +193,8 @@ public class BlockEventListener {
             if (end.compareTo(now) >= 0) {
                 logger.info("Delay" + delayBlocks + "_" + "scan all nft albums run() return  end > now: " + end + " > " + now);
                 break;
+            } else {
+                initialize(null, null);
             }
             TimeUnit.MILLISECONDS.sleep(100);
         }

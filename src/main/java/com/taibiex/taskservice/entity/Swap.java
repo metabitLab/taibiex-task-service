@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "swap", indexes = {
         @Index(name = "sender_idx", columnList = "sender"),
-        @Index(name = "recipient_idx", columnList = "recipient")
+        @Index(name = "recipient_idx", columnList = "recipient"),
+        @Index(name = "tx_hash_idx", columnList = "tx_hash", unique = true)
 })
 @Data
 @AllArgsConstructor

@@ -2,13 +2,18 @@ package com.taibiex.taskservice.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Index;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "mint")
+@Table(name = "mint", indexes = {
+        @Index(name = "sender_idx", columnList = "sender"),
+        @Index(name = "owner_idx", columnList = "owner"),
+        @Index(name = "tx_hash_idx", columnList = "tx_hash", unique = true)
+})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

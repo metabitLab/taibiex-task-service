@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "pool_created", indexes = {
         @Index(name = "token0_idx", columnList = "token0"),
         @Index(name = "token1_idx", columnList = "token1"),
-        @Index(name = "pool_idx", columnList = "pool")
+        @Index(name = "pool_idx", columnList = "pool"),
+        @Index(name = "tx_hash_idx", columnList = "tx_hash", unique = true)
 })
 @Data
 @AllArgsConstructor

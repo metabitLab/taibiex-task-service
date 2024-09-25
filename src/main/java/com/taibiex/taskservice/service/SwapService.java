@@ -23,7 +23,7 @@ public class SwapService {
         swapRepository.save(swap);
     }
 
-    public long countBySender(String sender){
-        return swapRepository.countAllBySender(sender);
+    public long countAllByRecipient(String sender){
+        return swapRepository.countAllByRecipient(sender);
     }
 }

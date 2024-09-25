@@ -435,7 +435,6 @@ public class Web3jUtils {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
     public Timestamp getEventHappenedTimeStampByBlockHash(String blockHash) {
